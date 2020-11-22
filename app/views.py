@@ -15,18 +15,17 @@ def index():
 
     return render_template('index.html', title = title, sources = all_sources )
 
-@app.route('/artcles/<int:id>')
-
+@app.route('/articles/<id>')
 def articles(id):
     '''
-    View root page function that returns the index page and its data
+    View articles page function that returns the articles page and its data
     '''
     
     # Getting artcle sources
     all_article = get_source_articles(id)
-    title = 'Home - Welcome to E-News Website'
+    title = 'All articles'
 
-    return render_template('aricles.html', title = title, articles = all_article )
+    return render_template('articles.html', title = title, articles = all_article )
 
 # @app.route('/search/<movie_name>')
 # def search(movie_name):    # if search_movie:

@@ -37,15 +37,15 @@ def get_source_articles(id):
     get_articles_url = base_url + 'everything?sources='+id+'&apiKey='+ format(api_key)
 
     articles_results = None
-    with urllib.request.urlopen(get_news_url) as url:
-        get_news_data = url.read()
-        get_news_response = json.loads(get_news_data)
+    with urllib.request.urlopen(get_articles_url) as url:
+        get_articles_data = url.read()
+        get_articles_response = json.loads(get_articles_data)
         
 
-        if get_news_response['status'] == 'ok':
-            articles_results_list = get_news_response['articles']
+        if get_articles_response['status'] == 'ok':
+            articles_results_list = get_articles_response['articles']
             articles_results = process_articles_results(articles_results_list)
-            # print(news_results)
+            print(articles_results)
     
     return articles_results
 
@@ -61,20 +61,18 @@ def process_articles_results(articles_list):
 
     articles_results = []
     for article_item in articles_list:
-        
-        source = article_item.get('source')
+
         id = article_item.get('id')
         title = article_item.get('title')
         description = article_item.get('description')
         url = article_item.get('url')
-        image_url = article_item.get('image_url')
+        image_url = article_item.get('urlToImage')
         publishedAt = article_item.get('publishedAt')
+        content = article_item.get('content')
         author = article_item.get('author')
-        source_name = source.get('name')
-        source_id = source.get('id')
 
         if url:
-            article_object = article.Article(id,title,description,url,image_url,publishedAt,author,source_name,source_id)
+            article_object = article.Article(id,author,title,description,url,image_url,content,publishedAt)
             
             articles_results.append(article_object)
     return articles_results

@@ -17,7 +17,7 @@
         <p> {{ source.description | truncate(30) }}</p>
         <p> {{ source.category}} </p> 
         <a href="{{ source.url}}" target="_blank">  {{ source.url}}</a><br>
-        <a href="#" class="btn btn-primary">View Articles</a>
+        <a href="/articles/{{ source.id}}" class="btn btn-primary">View Articles</a>
     </div>
     {% endfor %}
 {% endmacro %}
