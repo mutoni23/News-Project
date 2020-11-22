@@ -12,6 +12,7 @@ class ArticleTest(unittest.TestCase):
         self.new_article = Article('id','author','title','description','url','image_url','content','publishedAt')
 
     def test_instance(self):
+        
         self.assertTrue(isinstance(self.new_article,Article))
 
 if __name__ == '__main__':
