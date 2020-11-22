@@ -45,7 +45,7 @@ def get_source_articles(id):
         if get_articles_response['status'] == 'ok':
             articles_results_list = get_articles_response['articles']
             articles_results = process_articles_results(articles_results_list)
-            print(articles_results)
+            
     
     return articles_results
 
