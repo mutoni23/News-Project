@@ -91,8 +91,7 @@ def process_sources_results(source_list):
         name = source_item.get('name')
         description = source_item.get('description')
         url = source_item.get('url')
-        category = source_item.get('category')
-        
+        category = source_item.get('category')    
         language = source_item.get('language')
         country = source_item.get('country')
 
