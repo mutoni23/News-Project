@@ -13,7 +13,7 @@ to articles.
 3. A user is able to see the image, description and the date a story has been created on 
 4. A user will be able to go to further articles in order to read the whole story
 
-# Technologies Used 
+# Technologies Used
 - python3.6
 - boostrap
 - flask/ virtual environment 
